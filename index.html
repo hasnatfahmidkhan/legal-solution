@@ -22,21 +22,35 @@
 <body>
     <!-- ===== Start: Header Section ===== -->
     <header class="max-w-[1140px] mx-auto ">
-        <nav class="flex justify-between items-center mt-14">
+        <nav class="flex justify-between items-center p-4 xl:mt-14 relative">
+            <!-- brand logo  -->
             <img src="./images/logo2.png" alt="Legal Solution Logo">
-            <ul class="flex gap-10">
-                <li><a class="text-xl text-[#707070]" href="/">Home</a></li>
-                <li><a class="text-xl text-[#707070]" href="">Services</a></li>
-                <li><a class="text-xl text-[#707070]" href="">Cases</a></li>
-                <li><a class="text-xl text-[#707070]" href="">Blog</a></li>
-                <li><a class="text-xl text-[#707070]" href="">Contact Us</a></li>
+
+            <!-- hamburger menu  -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-[#707070]  focus:outline-none text-3xl">&#9776;</button>
+            </div>
+            <!-- nav links  -->
+            <ul id="nav-menu" class="hidden lg:flex lg:flex-row flex-col lg:gap-10 gap-2 w-full lg:w-fit 
+                 lg:static absolute top-20 left-0 bg-white lg:bg-transparent lg:p-0 p-4 shadow-xl lg:shadow-none
+            z-50">
+                <li class="lg:mb-0 mb-2"><a class="text-xl text-[#707070]" href="/">Home</a></li>
+                <li class="lg:mb-0 mb-2"><a class="text-xl text-[#707070]" href="">Services</a></li>
+                <li class="lg:mb-0 mb-2"><a class="text-xl text-[#707070]" href="">Cases</a></li>
+                <li class="lg:mb-0 mb-2"><a class="text-xl text-[#707070]" href="">Blog</a></li>
+                <li class="lg:mb-0 mb-2"><a class="text-xl text-[#707070]" href="">Contact Us</a></li>
+                <li class="lg:hidden">
+                    <a class="text-xl bg-[#B68C5A] text-white rounded-[8px]
+                 inline-flex justify-center items-center p-4" href="">Free Consultation</a>
+                </li>
             </ul>
-            <a class="text-xl bg-[#B68C5A] text-white rounded-[8px] inline-flex justify-center items-center p-4"
+            <!-- consultation btn  -->
+            <a class="text-xl bg-[#B68C5A] text-white rounded-[8px] hidden lg:inline-flex justify-center items-center p-4"
                 href="">Free Consultation</a>
         </nav>
 
         <!-- ===== Start: Ba.nner Section ===== -->
-        <section class="my-14 rounded-xl w-full py-32" style="background: url(./images/banner.png); ">
+        <section class="hidden my-14 rounded-xl w-full py-32" style="background: url(./images/banner.png); ">
             <div class="w-[650px] mx-auto flex flex-col gap-6">
                 <h1 class="text-7xl text-white text-center font-extrabold">We Provide Effective Legal Solutions</h1>
                 <p class="text-base text-center text-[#E7E7E7]">There are many variations of passages of Lorem Ipsum
@@ -58,7 +72,7 @@
 
     <!-- ===== Start: Main Section ===== -->
     <!-- ===== Start: Legal Practice Section ===== -->
-    <section class="max-w-[1140px] mx-auto">
+    <section class="max-w-[1140px] mx-auto" hidden>
         <div class="w-[65%] mx-auto">
             <h2 class="text-center text-4xl text-[#414040] font-extrabold">The Legal practice Area</h2>
             <p class="text-center text-[#707070] mt-6">There are many variations of passages of Lorem Ipsum available,
@@ -125,6 +139,27 @@
     </section>
     <!-- ===== End: Legal Practice Section ===== -->
     <!-- ===== End: Main Section ===== -->
+
+    <!-- JavaScript for menu toggle -->
+    <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        toggleBtn.addEventListener('click', (e) => {
+            navMenu.classList.toggle('hidden');
+            e.stopPropagation(); // Prevent event from bubbling to document
+        });
+
+        document.addEventListener('click', (e) => {
+            // If the menu is open and click target is outside nav and toggle button
+            if (!navMenu.classList.contains('hidden') &&
+                !navMenu.contains(e.target) &&
+                !toggleBtn.contains(e.target)) {
+                navMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
