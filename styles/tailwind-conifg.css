@@ -25,7 +25,6 @@ span {
   align-items: center;
   gap: 1.5rem;
   padding: 4rem;
-  /* border: 2px solid red; */
   border-right: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
 }
@@ -33,28 +32,3 @@ span {
 .law-card-border-none {
   border-right: none;
 }
-
-/* Responsive bg color of law card   */
-@media (max-width: 600px) {
-  #law-card1,
-  #law-card3,
-  #law-card5 {
-    background: linear-gradient(to bottom, #f3f3f3, #f3f3f3);
-  }
-}
-@media (min-width: 640px) and (max-width: 1024px) {
-  #law-card2,
-  #law-card3,
-  #law-card6 {
-    background: linear-gradient(to bottom, #f3f3f3, #f3f3f3);
-}
-}
-
-@media (min-width: 1280px){
-    #law-card2 {
-        background: linear-gradient(to bottom, #f3f3f3, #f3f3f3);
-        
-    }
-}
-
-/* ===== End: Custom CSS ===== */
