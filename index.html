@@ -22,13 +22,14 @@
 <body>
     <!-- ===== Start: Header Section ===== -->
     <header class="max-w-[1140px] mx-auto ">
-        <nav class="flex justify-between items-center p-4 xl:mt-14 relative">
+        <nav class="flex justify-between items-center p-4 xl:mt-14 relative lg:w-full w-[95%] lg:mx-0 mx-auto">
             <!-- brand logo  -->
             <img src="./images/logo2.png" alt="Legal Solution Logo">
 
             <!-- hamburger menu  -->
             <div class="lg:hidden">
-                <button id="menu-toggle" class="text-[#707070]  focus:outline-none text-3xl">&#9776;</button>
+                <button id="menu-toggle"
+                    class="text-[#b68c5a] font-extrabold focus:outline-none text-3xl">&#9776;</button>
             </div>
             <!-- nav links  -->
             <ul id="nav-menu" class="hidden lg:flex lg:flex-row flex-col lg:gap-10 gap-2 w-full lg:w-fit 
@@ -50,16 +51,18 @@
         </nav>
 
         <!-- ===== Start: Ba.nner Section ===== -->
-        <section class="hidden my-14 rounded-xl w-full py-32" style="background: url(./images/banner.png); ">
-            <div class="w-[650px] mx-auto flex flex-col gap-6">
-                <h1 class="text-7xl text-white text-center font-extrabold">We Provide Effective Legal Solutions</h1>
+        <section
+            class="lg:my-14 my-4 lg:py-32 py-20 bg-[url(./images/banner.png)] bg-cover bg-center bg-no-repeat lg:rounded-xl rounded-[10px] lg:w-full w-[95%] lg:mx-0 mx-auto">
+            <div class="w-[650px] max-w-full mx-auto flex flex-col gap-6 px-4 text-center ">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl  text-white text-center font-extrabold">We Provide Effective
+                    Legal Solutions</h1>
                 <p class="text-base text-center text-[#E7E7E7]">There are many variations of passages of Lorem Ipsum
                     available, but the
                     majority have
                     suffered alteration in some form, by injected humour.</p>
 
-                <div class="flex justify-center gap-5">
-                    <input class="bg-amber-50 text-base font-semibold py-3 px-4 rounded-xl w-3/4" type="search"
+                <div class="flex flex-col sm:flex-row justify-center gap-5">
+                    <input class="bg-amber-50 text-base font-semibold py-3 px-4 rounded-xl lg:w-3/4" type="search"
                         name="services-search" id="services-search" placeholder="Search Your Services">
                     <a class="text-xl bg-[#B68C5A] text-white rounded-[8px]
                      inline-flex justify-center items-center py-3 px-6 " href="">Search</a>
@@ -140,25 +143,8 @@
     <!-- ===== End: Legal Practice Section ===== -->
     <!-- ===== End: Main Section ===== -->
 
-    <!-- JavaScript for menu toggle -->
-    <script>
-        const toggleBtn = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        toggleBtn.addEventListener('click', (e) => {
-            navMenu.classList.toggle('hidden');
-            e.stopPropagation(); // Prevent event from bubbling to document
-        });
-
-        document.addEventListener('click', (e) => {
-            // If the menu is open and click target is outside nav and toggle button
-            if (!navMenu.classList.contains('hidden') &&
-                !navMenu.contains(e.target) &&
-                !toggleBtn.contains(e.target)) {
-                navMenu.classList.add('hidden');
-            }
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="./script/script.js"></script>
 
 </body>
 
